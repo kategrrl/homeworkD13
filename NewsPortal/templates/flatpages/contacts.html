@@ -1,0 +1,15 @@
+{% extends 'flatpages/default.html' %}
+
+{% block title %}
+{{ flatpage.title }}
+{% endblock title %}
+
+{% block content %}
+    <h2>{{ flatpage.title }}</h2>
+    <hr>
+    <h6>Невский пр., 114-116, Санкт-Петербург, Россия, 191025</h6>
+    <h6>+78123456789</h6>
+    <hr>
+
+{{ flatpage.content }}
+{% endblock content %}

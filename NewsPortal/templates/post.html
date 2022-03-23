@@ -1,0 +1,25 @@
+<!--  наследуемся от шаблона default.html, который мы создавали ещё во времена flatpages -->
+{% extends 'flatpages/default.html' %}
+
+{% load custom_filters %}
+
+<!-- Название у нас будет posts -->
+{% block title %}
+Posts
+{% endblock title %}
+
+<!-- В контенте на странице мы выводим новость, ID которого было передано в адрес -->
+{% block content %}
+<h2> <b>Самые свежие новости: </b> </h2>
+    <br>
+    <h2>{{ post.title | truncatechars:256 }}</h2>
+    <br>
+
+    <h6>{{ post.text }}</h6>
+
+<br>
+<hr>
+ Дата публикации: <h6>{{ post.dateCreation }} {{ time_now|date:'d E Y H:i:s' }} {{ post.author }}</h6>
+<br>
+<hr>
+{% endblock content %}
